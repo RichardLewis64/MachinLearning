@@ -1,9 +1,12 @@
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.metrics import  accuracy_score
+from sklearn.metrics import mean_squared_error, accuracy_score
 from sklearn.cluster import KMeans
-
+import numpy as np
 # Regresión Lineal (ya definida)
+def calculate_mse(y_true, y_pred):
+    return np.mean((y_true - y_pred) ** 2)
+
 def train_model(data):
     X = data[['caracteristica1', 'caracteristica2']]  # Reemplazar con las columnas reales
     y = data['ventas']
@@ -14,9 +17,11 @@ def train_model(data):
     model.fit(X_train, y_train)
     
     predictions = model.predict(X_test)
-    mse = (y_test, predictions)
-    
-    return model, mse
+    mse = calculate_mse(y_test, predictions)
+  
+    #predictions = model.predict(X_test)
+    #mse = mean_squared_error(y_test, predictions)
+    #return model, mse
 
 # Clustering
 def train_clustering(data):
