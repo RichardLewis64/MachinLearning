@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.metrics import mean_squared_error, accuracy_score
+from sklearn.metrics import  accuracy_score
 from sklearn.cluster import KMeans
 
 # Regresión Lineal (ya definida)
@@ -14,7 +14,7 @@ def train_model(data):
     model.fit(X_train, y_train)
     
     predictions = model.predict(X_test)
-    mse = mean_squared_error(y_test, predictions)
+    mse = (y_test, predictions)
     
     return model, mse
 
