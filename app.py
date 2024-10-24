@@ -6,10 +6,18 @@ from utils.visualization import plot_data
 
 st.title("Sistema de Predicción de Ventas")
 
-# Subir archivo
-uploaded_file = st.file_uploader("Sube el archivo de ventas")
-if uploaded_file:
-    data = load_data(uploaded_file)  # Cargar datos
+# Elegir entre cargar archivo o usar dataset interno
+data_option = st.radio("Selecciona el origen de los datos:", ("Cargar archivo", "Usar dataset interno"))
+
+if data_option == "Cargar archivo":
+    uploaded_file = st.file_uploader("Sube el archivo de ventas")
+    if uploaded_file:
+        data = load_data(uploaded_file)
+else:
+    data = load_data(use_internal=True)
+
+# Mostrar los datos si están cargados
+if data is not None:
     st.write(data)
 
     # Visualización de los datos

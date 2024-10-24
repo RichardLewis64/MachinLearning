@@ -1,6 +1,6 @@
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression, LogisticRegression
-from sklearn.metrics import mean_squared_error, accuracy_score
+from sklearn.metrics import accuracy_score
 from sklearn.cluster import KMeans
 import numpy as np
 # Regresión Lineal (ya definida)
@@ -8,7 +8,7 @@ def calculate_mse(y_true, y_pred):
     return np.mean((y_true - y_pred) ** 2)
 
 def train_model(data):
-    X = data[['caracteristica1', 'caracteristica2']]  # Reemplazar con las columnas reales
+    X = data[['Capacidad_litros', 'Tipo_Plastico']]  # Reemplazar con las columnas reales
     y = data['ventas']
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
