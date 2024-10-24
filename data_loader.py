@@ -4,7 +4,7 @@ import streamlit as st
 def load_data(file=None, use_internal=False):
     if use_internal:
         # Cargar dataset interno
-        data = pd.read_csv('data/ventas.csv')  # Ruta al dataset interno
+        data = pd.read_csv('data/tanques_productos_plasticos.csv')  # Ruta al dataset interno
         st.success("Datos internos cargados exitosamente")
     elif file is not None:
         # Cargar datos desde el archivo subido

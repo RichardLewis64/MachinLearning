@@ -25,14 +25,14 @@ def train_model(data):
 
 # Clustering
 def train_clustering(data):
-    X = data[['caracteristica1', 'caracteristica2']]  # Ajustar a tus columnas
+    X = data[['Capasidad_litros', 'Tipo_Plastico']]  # Ajustar a tus columnas
     kmeans = KMeans(n_clusters=3)  # Puedes ajustar el número de clusters
     labels = kmeans.fit_predict(X)
     return labels
 
 # Regresión Logística
 def train_logistic_regression(data):
-    X = data[['caracteristica1', 'caracteristica2']]  # Ajustar a tus columnas
+    X = data[['Capasidad_litros', 'Tipo_Plastico']]  # Ajustar a tus columnas
     y = data['ventas'] > 100  # Por ejemplo, ventas mayores a 100
 
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
