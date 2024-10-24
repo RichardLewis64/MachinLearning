@@ -1,0 +1,12 @@
+credentials:
+  usernames:
+    usuario1:
+      name: Usuario 1
+      password: $2b$12$...  # Contraseña encriptada
+    usuario2:
+      name: Usuario 2
+      password: $2b$12$...  # Otra contraseña encriptada
+cookie:
+  expiry_days: 30
+  key: my_secret_key
+preauthorized: {}
