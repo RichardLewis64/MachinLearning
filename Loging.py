@@ -60,3 +60,28 @@ def main():
 
 if __name__ == '__main__':
     main()
+import bcrypt
+# Generar contraseñas encriptadas
+password = '12345'
+hashed_password = bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+print(hashed_password)
+config = {
+    'credentials': {
+        'usernames': {
+            'usuario1': {
+                'name': 'Usuario 1',
+                'password': '$2b$12$...'  # Contraseña encriptada
+            },
+            'usuario2': {
+                'name': 'Usuario 2',
+                'password': '$2b$12$...'  # Otra contraseña encriptada
+            }
+        }
+    },
+    'cookie': {
+        'expiry_days': 30,
+        'key':'my_secret_key'  # Cambia esto por una clave segura
+    },
+    'preauthorized': {}
+}
+
