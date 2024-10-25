@@ -3,8 +3,7 @@ import streamlit as st
 
 def load_data(file=None, use_internal=False):
     if use_internal:
-        # Cargar dataset interno
-        data = pd.read_csv('data/tanques_productos_plasticos.csv')  # Ruta al dataset interno
+        data = pd.read_csv('data/tanques_productos_plasticos.csv')
         st.success("Datos internos cargados exitosamente")
     elif file is not None:
         data = pd.read_csv(file)
