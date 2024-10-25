@@ -42,5 +42,4 @@ def train_logistic_regression(data):
 
     predictions = model.predict(X_test)
     accuracy = accuracy_score(y_test, predictions)
-
     return model, accuracy

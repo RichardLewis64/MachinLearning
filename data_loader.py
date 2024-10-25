@@ -7,7 +7,6 @@ def load_data(file=None, use_internal=False):
         data = pd.read_csv('data/tanques_productos_plasticos.csv')  # Ruta al dataset interno
         st.success("Datos internos cargados exitosamente")
     elif file is not None:
-        # Cargar datos desde el archivo subido
         data = pd.read_csv(file)
         st.success("Archivo subido cargado exitosamente")
     else:
