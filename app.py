@@ -1,9 +1,10 @@
+from datetime import date
 import streamlit as st
 import pandas as pd
 from data_loader import load_data
 from model import train_model, train_clustering, train_logistic_regression
 from utils.visualization import plot_data
-from login import authenticate_user
+from Login import authenticate_user
 
 st.title("Sistema de Predicción de Ventas")
 
